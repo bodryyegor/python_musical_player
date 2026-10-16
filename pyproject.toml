@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "musical-player-1-0-0"
+version = "1.0.0"
+description = "A simple musical player"
+authors = ["zvezdochey e52gor"]
+readme = "README.md"
+packages = [{include = "models"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+prettytables = "^1.1.5"
+bs4 = "^0.0.2"
+selenium = "^4.32.0"
+prettytable = "^3.16.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.7"
+dotenv = "^0.9.9"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+musical_player = "main:main"
+
+[tool.ruff]
+line-length = 88
+lint.select = ["E", "F", "W"]
+exclude = [".git", "__pycache__", "venv", ".venv"]
+lint.ignore = ["E501"]
+lint.fixable = ["ALL"]
